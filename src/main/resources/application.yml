@@ -1,0 +1,7 @@
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+#  file:
+#    name: C:\test\sell.log
+#  level:
+#   root: debug
