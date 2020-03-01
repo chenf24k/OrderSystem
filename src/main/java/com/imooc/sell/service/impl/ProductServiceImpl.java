@@ -12,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
@@ -53,7 +54,7 @@ public class ProductServiceImpl implements ProductService {
         for (CartDTO cartDTO : cartDTOList) {
             ProductInfo productInfo;
             Optional<ProductInfo> optional = repository.findById(cartDTO.getProductId());
-            if (optional.isPresent())
+            if (!optional.isPresent())
                 throw new SellException(ResultEnum.PRODUCT_NOE_EXIST);
             else
                 productInfo = optional.get();
