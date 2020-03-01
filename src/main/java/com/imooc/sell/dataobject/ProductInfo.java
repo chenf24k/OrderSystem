@@ -1,6 +1,7 @@
 package com.imooc.sell.dataobject;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,6 +10,7 @@ import java.util.Date;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class ProductInfo {
     @Id
     private String productId;
@@ -21,5 +23,4 @@ public class ProductInfo {
     private Integer categoryType;
     private Date createTime;
     private Date updateTime;
-
 }
