@@ -13,14 +13,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class LoggerTest {
 
     @Test
-    public void test1() {
+    void test1() {
         log.debug("debug...");
         log.info("info...");
         log.error("error...");
     }
 
     @Test
-    public void test2() {
+    void test2() {
         String name = "imooc";
         String password = "123456";
         log.info("name:{},password:{}", name, password);

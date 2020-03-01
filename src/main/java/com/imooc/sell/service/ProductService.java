@@ -12,14 +12,14 @@ public interface ProductService {
     /**
      * 查询所有在架商品
      *
-     * @return
+     * @return List<ProductInfo>
      */
     List<ProductInfo> findUpAll();
 
     /**
      * 查询所有商品
      *
-     * @return
+     * @return Page<ProductInfo>
      */
     Page<ProductInfo> findAll(Pageable pageable);
 

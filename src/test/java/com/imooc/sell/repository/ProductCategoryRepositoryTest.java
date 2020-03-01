@@ -5,14 +5,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.Assert;
 
 import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class ProductCategoryRepositoryTest {
@@ -20,18 +18,14 @@ class ProductCategoryRepositoryTest {
     private ProductCategoryRepository repository;
 
     @Test
-    public void findOneTest() {
-        ProductCategory productCategory = null;
+    void findOneTest() {
         Optional<ProductCategory> op = repository.findById(1);
-        if (op.isPresent()) {
-            productCategory = op.get();
-            System.out.println(productCategory.toString());
-        }
+        op.ifPresent(productCategory -> System.out.println(productCategory.toString()));
     }
 
     @Test
     @Transactional
-    public void saveTest() {
+    void saveTest() {
         ProductCategory productCategory = new ProductCategory("特色", 7);
         ProductCategory result = repository.save(productCategory);
         Assertions.assertNotNull(result);
@@ -50,7 +44,7 @@ class ProductCategoryRepositoryTest {
     }
 
     @Test
-    public void findByCategoryTypeInTest() {
+    void findByCategoryTypeInTest() {
         List<Integer> list = Arrays.asList(4, 6, 10);
         List<ProductCategory> result = repository.findByCategoryTypeIn(list);
         System.out.println(result.toString());
