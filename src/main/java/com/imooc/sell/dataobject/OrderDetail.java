@@ -1,5 +1,7 @@
 package com.imooc.sell.dataobject;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.imooc.sell.util.serializer.Date2LongSerializer;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
@@ -23,7 +25,8 @@ public class OrderDetail {
     private BigDecimal productPrice;
     private Integer productQuantity;
     private String productIcon;
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date createTime;
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date updateTime;
-
 }

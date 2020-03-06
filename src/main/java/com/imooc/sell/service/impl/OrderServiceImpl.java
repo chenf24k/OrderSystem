@@ -82,8 +82,8 @@ public class OrderServiceImpl implements OrderService {
 
         OrderMaster orderMaster = new OrderMaster();
         // BeanUtils.copyProperties() 属性为null时也会被复制，所有可以先复制，再进行赋值以避免被覆盖
+        orderDTO.setOrderId(orderId);
         BeanUtils.copyProperties(orderDTO, orderMaster);
-        orderMaster.setOrderId(orderId);
         orderMaster.setOrderAmount(orderAmount);
         orderMaster.setOrderStatus(OrderStatusEnum.NEW.getCode());
         orderMaster.setPayStatus(PayStatusEnum.WAIT.getCode());
