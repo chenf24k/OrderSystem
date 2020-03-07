@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>千万不要点我</title>
+
+    <style type="text/css">
+        #button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+
+        }
+
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById("button").onclick =
+            function () {
+                var result = window.confirm("确认扣款100元？");
+                if (result) {
+                    alert("已扣款成功！");
+                } else {
+                    alert("手机自爆准备中....");
+                    alert("继续扣款中....");
+                }
+            }
+    }
+
+</script>
+
+<input type="button" style="width: 100px; margin-top: 200px;margin-left: 200px;padding: 20px" value="点我呀" id="button"/>
+</body>
+</html>
