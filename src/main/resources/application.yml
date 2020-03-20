@@ -11,12 +11,30 @@ spring:
     serialization:
       write-dates-as-timestamps: true
     default-property-inclusion: non_null  #全局配置，值为null的字段都不反回
+  http:
+    encoding:
+      charset: utf-8
+  freemarker:
+    template-loader-path: classpath:/templates # classpath:  一定不能漏写
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: false
+    expose-session-attributes: false
+    request-context-attribute: req
+    suffix: .ftl
+
 
 
 server:
   servlet:
     context-path: /sell
 
+
+wechat:
+  mpAppId: wxf2343asd2345lkj52345
+  mpAppSecret: 234dan49d902nd0q3jhfas0f2
 
 #logging:
 #  pattern:
